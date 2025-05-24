@@ -1,14 +1,15 @@
-# define function to calculate cube
-def cube(number):
-    return number * number * number
-
-# define a function which will execute cube function if the user entered number is divisible by 3
-def by_three(number):
-    if number % 3 == 0:
-        return cube(number)
+# Function to calculate factorial
+def factorial(n):
+    if n == 0 or n == 1: # Base case: 0! and 1! are both 1
+        return 1
     else:
-        return False
+        return n * factorial(n - 1) # Recursive call
 
-# display result
-print(by_three(9))
-print(by_three(4))
+# Input from user
+num = int(input("Enter a number: "))
+
+# Check if the number is negative
+if num < 0:
+    print("Factorial does not exist for negative numbers.")
+else:
+    print(f"The factorial of {num} is {factorial(num)}")
